@@ -18,7 +18,12 @@ const PostForm = () => {
     const { name, value, type } = e.target;
     setFormData({
       ...formData,
-      [name]: type === "radio" ? value === "true" : value,
+      [name]:
+        type === "radio"
+          ? value === "true"
+            ? true
+            : false
+          : value,
     });
   };
 
@@ -86,19 +91,18 @@ const PostForm = () => {
         </div>
 
         <fieldset className="pf-fieldset">
-  <legend className="pf-legend">Public</legend>
-
-  <div className="pf-radio-group">
-    <label className="pf-radio">
-      <input
-        type="radio"
-        name="public"
-        value="true"
-        checked={formData.public === true}
-        onChange={handleChange}
-      />
-      <span>Yes</span>
-    </label>
+          <legend className="pf-legend">Public</legend>
+          <div className="pf-radio-group">
+            <label className="pf-radio">
+              <input
+              type="radio"
+              name="public"
+              value="true"
+              checked={formData.public === true}
+              onChange={handleChange}
+              />
+              <span>Yes</span>
+              </label>
 
     <label className="pf-radio">
       <input
