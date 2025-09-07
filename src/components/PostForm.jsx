@@ -22,7 +22,6 @@ const PostForm = () => {
     });
   };
 
-  // submit, invio in POST e reset
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -87,30 +86,32 @@ const PostForm = () => {
         </div>
 
         <fieldset className="pf-fieldset">
-          <legend className="pf-legend">Public</legend>
-          <div className="pf-radio-group">
-            <label className="pf-radio">
-              <input
-                type="radio"
-                name="public"
-                value="true"
-                checked={formData.public === true}
-                onChange={handleChange}
-              />
-            </label>
+  <legend className="pf-legend">Public</legend>
 
-            <label className="pf-radio">
-              <input
-                type="radio"
-                name="public"
-                value="false"
-                checked={formData.public === false}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-        </fieldset>
+  <div className="pf-radio-group">
+    <label className="pf-radio">
+      <input
+        type="radio"
+        name="public"
+        value="true"
+        checked={formData.public === true}
+        onChange={handleChange}
+      />
+      <span>Yes</span>
+    </label>
 
+    <label className="pf-radio">
+      <input
+        type="radio"
+        name="public"
+        value="false"
+        checked={formData.public === false}
+        onChange={handleChange}
+      />
+      <span>No</span>
+    </label>
+  </div>
+</fieldset>
         <button type="submit" className="pf-button">Submit Post</button>
       </form>
     </div>
